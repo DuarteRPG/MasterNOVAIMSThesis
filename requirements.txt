@@ -9,3 +9,4 @@ dice-ml
 shap
 git+https://github.com/DataResponsibly/ShaRP 
 git+https://github.com/joaopfonseca/recourse-over-time.git
+seaborn
