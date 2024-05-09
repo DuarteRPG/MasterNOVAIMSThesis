@@ -1,8 +1,8 @@
-pandas
-scikit-learn==1.2.1
-plotly==5.17.0
-streamlit==1.30.0
-matplotlib==3.7.0
+pandas>=2.1.0
+scikit-learn>=1.2.1
+plotly>=5.17.0
+streamlit
+matplotlib>=3.7.0
 dash
 ml-research==0.5.0
 dice-ml
