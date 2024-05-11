@@ -244,8 +244,6 @@ if Sport == 'Basketball':
             cfs.set_index(cfs.columns[0], inplace=True)
             differences.set_index(differences.columns[0], inplace=True)
             # Plot bar
-            st.write(differences)
-            st.write(Team)
             Team_differences = differences.loc[Team]
 
 
