@@ -28,6 +28,8 @@ import shap
 import warnings
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 
 # From other libraries
 from dash import dcc, html
