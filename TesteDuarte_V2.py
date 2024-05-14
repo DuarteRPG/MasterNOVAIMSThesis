@@ -1810,7 +1810,7 @@ elif Sport == 'Football':
                             "club_flag_url", # Not informative.
                             "nation_logo_url", # Not informative.
                             "nation_flag_url",
-                            "nation_flag_url1]).set_index("sofifa_id")
+                            "nation_flag_url1"]).set_index("sofifa_id")
         df[['work_rate_attacking', 'work_rate_defensive']] = df['work_rate'].str.split('/', expand=True).replace({'Low': 1, 'Medium': 2, 'High': 3})
         df = df.drop(columns=["work_rate"]) # Not informative.
         df.isnull().sum()[df.isnull().sum() > 0]
