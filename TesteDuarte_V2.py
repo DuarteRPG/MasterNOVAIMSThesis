@@ -76,7 +76,7 @@ st.subheader("Datasets used in our research:")
 # 4. Sub Header
 items = ["(1) Basket Team NBA 2022-23 (Regular Season)", 
          "(2) Basket Player NBA 2022 (Regular Season)",
-         "(3) Football Team", 
+         "(3) Football Team 2023", 
          "(4) Football Player FIFA 2022",
          "(5) ATP Season 2022", 
          "(6) WTA Season 2023"]
@@ -454,7 +454,7 @@ if Sport == 'Basketball':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -477,7 +477,7 @@ if Sport == 'Basketball':
                 Basketball_team_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_team_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Basketball_team_feature_full_name} vary across a dataset** and how changes in the {Basketball_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_team_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_team_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Basketball_team_feature_full_name} vary across a dataset** and how changes in the {Basketball_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_team_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
@@ -989,7 +989,7 @@ if Sport == 'Basketball':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -1012,7 +1012,7 @@ if Sport == 'Basketball':
                 Basketball_player_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_player_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Basketball_player_feature_full_name} vary across a dataset** and how changes in the {Basketball_player_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_player_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_player_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_player_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_player_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Basketball_player_feature_full_name} vary across a dataset** and how changes in the {Basketball_player_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_player_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_player_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_player_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
@@ -1542,7 +1542,7 @@ elif Sport == 'Football':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -1565,7 +1565,7 @@ elif Sport == 'Football':
                 Football_team_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Football_team_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Football_team_feature_full_name} vary across a dataset** and how changes in the {Football_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Football_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Football_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Football_team_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Football_team_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Football_team_feature_full_name} vary across a dataset** and how changes in the {Football_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Football_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Football_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Football_team_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
@@ -2133,7 +2133,7 @@ elif Sport == 'Football':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -2156,7 +2156,7 @@ elif Sport == 'Football':
                 Football_player_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Football_player_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Football_player_feature_full_name} vary across a dataset** and how changes in the {Football_player_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Football_player_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Football_player_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Football_player_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Football_player_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Football_player_feature_full_name} vary across a dataset** and how changes in the {Football_player_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Football_player_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Football_player_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Football_player_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
@@ -2672,7 +2672,7 @@ elif Sport == 'Tennis':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -2695,7 +2695,7 @@ elif Sport == 'Tennis':
                 Tennis_male_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
@@ -3197,7 +3197,7 @@ elif Sport == 'Tennis':
             shap.plots.beeswarm(shap_values, max_display=15)
             st.pyplot()
             st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.r")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
@@ -3220,7 +3220,7 @@ elif Sport == 'Tennis':
                 Tennis_female_feature, lr.predict, X, ice=False,
                 model_expected_value=True, feature_expected_value=True) 
             st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_female_feature_full_name}, now in the new original feature space (X). It explains ***how SHAP values of {Tennis_female_feature_full_name} vary across a dataset** and how changes in the {Tennis_female_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_female_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_female_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_female_feature_full_name}** as a certain value;")
+            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_female_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_female_feature_full_name} vary across a dataset** and how changes in the {Tennis_female_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_female_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_female_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_female_feature_full_name}** as a certain value;")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
