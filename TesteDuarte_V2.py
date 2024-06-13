@@ -3039,13 +3039,13 @@ elif Sport == 'Tennis':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Player_differences.index, Player_differences.values)
-            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            plt.xlabel('Columns')
-            plt.ylabel('Values')
-            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
-            st.pyplot(fig) # Displaying plot in Streamlit
-            st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            # plt.xlabel('Columns')
+            # plt.ylabel('Values')
+            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
+            # st.pyplot(fig) # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
                     
             # 9. KDE
             differences_array = differences[Tennis_female_feature].values
@@ -3075,19 +3075,19 @@ elif Sport == 'Tennis':
             selected_player = Player
             # Filter "differences" DataFrame.
             player_X_normalized = X_normalized.loc[selected_player]    
-            categories = list(player_X_normalized.index) # Setting categories as a list of all "differences" column.
-            values = player_X_normalized.values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 10**: 'Radar' chart gives us a visual understanding of the current importance, per feature, **on {selected_player}**. Provides insights on which features are **currently contributing the most** for the actual model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # categories = list(player_X_normalized.index) # Setting categories as a list of all "differences" column.
+            # values = player_X_normalized.values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 10**: 'Radar' chart gives us a visual understanding of the current importance, per feature, **on {selected_player}**. Provides insights on which features are **currently contributing the most** for the actual model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 11. Radar (per player) - SUGGESTED CHANGES
             # Specify the name of the player
@@ -3401,24 +3401,24 @@ elif Sport == 'Tennis':
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
-
-
             
             
             # 28. Create a new DataFrame
+            st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
             diff_max_min_values = df_values_2.max() - df_values_2.min() # Calculate the difference between the maximum and minimum values for each column
             df_stats = pd.DataFrame({
-            'Average Abs': average_abs_values,
+            'Average Absolute Value': average_abs_values,
             'Variance': variance_values,
-            'Max-Min Difference': diff_max_min_values})
+            'Max-Min Difference (Amplitude)': diff_max_min_values})
             st.dataframe(df_stats, width=900)
             st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
+
             
-            # 28. DiCE vs SHAP vs SHARP: Correlation Matrix
+            # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
             st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
