@@ -244,41 +244,41 @@ if Sport == 'Basketball':
             
             # 4. Violin: Insights from SUGGESTED CHANGES
             differences_array = differences.values.flatten()
-            # Create a violin plot
-            plt.figure(figsize=(8, 6))
-            sns.violinplot(y = differences_array, color='skyblue')
-            plt.ylabel('Differences')
-            st.markdown("<h4 style='text-align: center;'>Violin: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown("**Figure 4**: Results from DICE. Another simple method to interpret **where the majority of the differences** are concentrated. Mostly concentrated around < |0.1|. There is no feature on X-axis.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # Create a violin plot
+            # plt.figure(figsize=(8, 6))
+            # sns.violinplot(y = differences_array, color='skyblue')
+            # plt.ylabel('Differences')
+            # st.markdown("<h4 style='text-align: center;'>Violin: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown("**Figure 4**: Results from DICE. Another simple method to interpret **where the majority of the differences** are concentrated. Mostly concentrated around < |0.1|. There is no feature on X-axis.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
-            # 5. Density Plot: Insights from SUGGESTED CHANGES
-            differences = differences.squeeze()  # Ensure it's a Series
-            plt.figure(figsize=(10, 10)) 
-            sns.kdeplot(data=differences, shade=True)
-            plt.xlabel('(CFS - X)')
-            plt.ylabel('Density')
-            st.markdown("<h4 style='text-align: center;'>Density Plot: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown("**Figure 5**: Results from DICE. Provides the distribution of **differences per feature**, indicating which ones vary the most and which one vary the least. The closer a feature is to zero, the less it varies.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 5. Density Plot: Insights from SUGGESTED CHANGES
+            # differences = differences.squeeze()  # Ensure it's a Series
+            # plt.figure(figsize=(10, 10)) 
+            # sns.kdeplot(data=differences, shade=True)
+            # plt.xlabel('(CFS - X)')
+            # plt.ylabel('Density')
+            # st.markdown("<h4 style='text-align: center;'>Density Plot: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown("**Figure 5**: Results from DICE. Provides the distribution of **differences per feature**, indicating which ones vary the most and which one vary the least. The closer a feature is to zero, the less it varies.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            values = differences.mean().values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # Plot features. 
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
+            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            # values = differences.mean().values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # # Plot features. 
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -330,106 +330,106 @@ if Sport == 'Basketball':
             # 10. Radar (per player) - INITIAL STATE
             # Specify the name of the player
             selected_player = Team
-            # Filter "differences" DataFrame.
-            player_X_normalized = X_normalized.loc[selected_player]    
-            categories = list(player_X_normalized.index) # Setting categories as a list of all "differences" column.
-            values = player_X_normalized.values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 10**: 'Radar' chart gives us a visual understanding of the current importance, per feature, **on {selected_player}**. Provides insights on which features are **currently contributing the most** for the actual model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # Filter "differences" DataFrame.
+            # player_X_normalized = X_normalized.loc[selected_player]    
+            # categories = list(player_X_normalized.index) # Setting categories as a list of all "differences" column.
+            # values = player_X_normalized.values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 10**: 'Radar' chart gives us a visual understanding of the current importance, per feature, **on {selected_player}**. Provides insights on which features are **currently contributing the most** for the actual model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 11. Radar (per player) - SUGGESTED CHANGES
-            # Specify the name of the player
-            selected_player = Team
-            # Filter "differences" DataFrame.
-            player_differences = differences.loc[selected_player]    
-            categories = list(player_differences.index) # Setting categories as a list of all "differences" column.
-            values = player_differences.values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown(f"<h4 style='text-align: center;'>SUGGESTED CHANGES: Mean Differences for {selected_player}</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 11**: 'Radar' chart gives us a closer look at the differences, per feature, **on {selected_player}**. Provides insights on which features should **contribute more and less** in order to achieve the desired model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 11. Radar (per player) - SUGGESTED CHANGES
+            # # Specify the name of the player
+            # selected_player = Team
+            # # Filter "differences" DataFrame.
+            # player_differences = differences.loc[selected_player]    
+            # categories = list(player_differences.index) # Setting categories as a list of all "differences" column.
+            # values = player_differences.values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown(f"<h4 style='text-align: center;'>SUGGESTED CHANGES: Mean Differences for {selected_player}</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 11**: 'Radar' chart gives us a closer look at the differences, per feature, **on {selected_player}**. Provides insights on which features should **contribute more and less** in order to achieve the desired model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 12. Radar (per player) - SUGGESTED CHANGES - Normalized.
-            # Specify the name of the player
-            selected_player = Team
-            # Filter "differences" DataFrame.
-            player_differences_normalized = differences_normalized.loc[selected_player]    
-            categories = list(player_differences_normalized.index) # Setting categories as a list of all "differences" column.
-            values = player_differences_normalized.values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown(f"<h4 style='text-align: center;'>SUGGESTED CHANGES: Mean Differences for {selected_player} - Normalized</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 12**: 'Radar' chart gives us a closer look at the differences, per feature, **on {selected_player}**. Similar to the previous visualization, but with values normalized.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 12. Radar (per player) - SUGGESTED CHANGES - Normalized.
+            # # Specify the name of the player
+            # selected_player = Team
+            # # Filter "differences" DataFrame.
+            # player_differences_normalized = differences_normalized.loc[selected_player]    
+            # categories = list(player_differences_normalized.index) # Setting categories as a list of all "differences" column.
+            # values = player_differences_normalized.values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown(f"<h4 style='text-align: center;'>SUGGESTED CHANGES: Mean Differences for {selected_player} - Normalized</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 12**: 'Radar' chart gives us a closer look at the differences, per feature, **on {selected_player}**. Similar to the previous visualization, but with values normalized.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 13. Radar (per player) - RECOMMENDED STATE
-            # Specify the name of the player
-            selected_player = Team
-            # Filter "differences" DataFrame.
-            player_cfs_normalized = cfs_normalized.loc[selected_player]
-            categories = list(player_cfs_normalized.index) # Setting categories as a list of all "differences" column.
-            values = player_cfs_normalized.values.tolist() # List of mean differences per feature.
-            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            plt.figure(figsize=(8, 8)) # Setting figure size.
-            plt.polar(angles, values) # Using polar coordinates.
-            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            st.markdown(f"<h4 style='text-align: center;'>RECOMMENDED STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 13**: ''Radar' chart gives us a visual understanding of the desired importance, per feature, **on {selected_player}**. Provides insights on which features should **in the future contributing the most** to achieve the desired model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 13. Radar (per player) - RECOMMENDED STATE
+            # # Specify the name of the player
+            # selected_player = Team
+            # # Filter "differences" DataFrame.
+            # player_cfs_normalized = cfs_normalized.loc[selected_player]
+            # categories = list(player_cfs_normalized.index) # Setting categories as a list of all "differences" column.
+            # values = player_cfs_normalized.values.tolist() # List of mean differences per feature.
+            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # plt.figure(figsize=(8, 8)) # Setting figure size.
+            # plt.polar(angles, values) # Using polar coordinates.
+            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            # st.markdown(f"<h4 style='text-align: center;'>RECOMMENDED STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 13**: ''Radar' chart gives us a visual understanding of the desired importance, per feature, **on {selected_player}**. Provides insights on which features should **in the future contributing the most** to achieve the desired model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # Specify the name of the player.
-            selected_player = Team
-            # Filter the differences "DataFrame" for the selected player.
-            player_cfs_normalized = cfs_normalized.loc[selected_player]
-            player_values_cfs = player_cfs_normalized.values.tolist()
-            player_values_cfs += player_values_cfs[:1]
-            player_X_normalized = X_normalized.loc[selected_player]
-            player_values_X = player_X_normalized.values.tolist()
-            player_values_X += player_values_X[:1]
-            # Changing angles and categories.
-            categories = list(player_cfs_normalized.index)
-            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            angles += angles[:1]
-            # Plot for 'cfs', that represent the desired values.
-            plt.figure(figsize=(8, 8))
-            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # Plot for 'X', that represent the initial values.
-            plt.polar(angles, player_values_X, label='initial', color='green')
-            plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            plt.xticks(angles[:-1], categories)
-            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            plt.legend()
-            st.pyplot() # Displaying plot in Streamlit
-            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)            
+            # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
+            # # Specify the name of the player.
+            # selected_player = Team
+            # # Filter the differences "DataFrame" for the selected player.
+            # player_cfs_normalized = cfs_normalized.loc[selected_player]
+            # player_values_cfs = player_cfs_normalized.values.tolist()
+            # player_values_cfs += player_values_cfs[:1]
+            # player_X_normalized = X_normalized.loc[selected_player]
+            # player_values_X = player_X_normalized.values.tolist()
+            # player_values_X += player_values_X[:1]
+            # # Changing angles and categories.
+            # categories = list(player_cfs_normalized.index)
+            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            # angles += angles[:1]
+            # # Plot for 'cfs', that represent the desired values.
+            # plt.figure(figsize=(8, 8))
+            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # # Plot for 'X', that represent the initial values.
+            # plt.polar(angles, player_values_X, label='initial', color='green')
+            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            # plt.xticks(angles[:-1], categories)
+            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            # plt.legend()
+            # st.pyplot() # Displaying plot in Streamlit
+            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)            
 
 
         #else:
@@ -448,37 +448,37 @@ if Sport == 'Basketball':
             st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 16. SHAP Beeswarm Plot
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.beeswarm(shap_values, max_display=15)
-            st.pyplot()
-            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 16. SHAP Beeswarm Plot
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.beeswarm(shap_values, max_display=15)
+            # st.pyplot()
+            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
         with tabs[3]:
             # 17. Scatter Plot
             basketball_team_index_feature = Basketball_team_list.index(Basketball_team_feature)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.scatter(shap_values[:, basketball_team_index_feature])
-            st.pyplot()
-            st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_team_feature_full_name} feature, which means **'how much must {Basketball_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_team_feature_full_name}**.")
-            st.markdown(f"This means that, for positive SHAP values, **{Basketball_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_team_feature_full_name} must impact negatively** the model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.scatter(shap_values[:, basketball_team_index_feature])
+            # st.pyplot()
+            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_team_feature_full_name} feature, which means **'how much must {Basketball_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_team_feature_full_name}**.")
+            # st.markdown(f"This means that, for positive SHAP values, **{Basketball_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_team_feature_full_name} must impact negatively** the model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
-            # 18. SHAP Partial Dependence Plot
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.partial_dependence_plot(
-                Basketball_team_feature, lr.predict, X, ice=False,
-                model_expected_value=True, feature_expected_value=True) 
-            st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_team_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Basketball_team_feature_full_name} vary across a dataset** and how changes in the {Basketball_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_team_feature_full_name}** as a certain value;")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 18. SHAP Partial Dependence Plot
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.partial_dependence_plot(
+            #     Basketball_team_feature, lr.predict, X, ice=False,
+            #     model_expected_value=True, feature_expected_value=True) 
+            # st.pyplot()
+            # st.markdown(f"**Figure 18**: Model's dependence on the feature {Basketball_team_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Basketball_team_feature_full_name} vary across a dataset** and how changes in the {Basketball_team_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Basketball_team_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Basketball_team_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Basketball_team_feature_full_name}** as a certain value;")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
@@ -493,28 +493,28 @@ if Sport == 'Basketball':
 
         #else:
         with tabs[4]:
-            # Concepts to take into account
-            st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
+            # # Concepts to take into account
+            # st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
 
-            # 20. SHARP: Rank vs Score
-            import os
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
-            st.image("Rank_vs_Score_(1) Basket Team.png")
-            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Team's Score, the better tends to be the its rank**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 20. SHARP: Rank vs Score
+            # import os
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
+            # st.image("Rank_vs_Score_(1) Basket Team.png")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Team's Score, the better tends to be the its rank**.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 21. SHARP: Top and Bottom 3 Individuals
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
-            st.image("Top_bottom_feature_importance_1.png")
-            st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 21. SHARP: Top and Bottom 3 Individuals
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
+            # st.image("Top_bottom_feature_importance_1.png")
+            # st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 22. SHARP: Feature Importance
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
-            st.image("Strata_boxplot_1.png")
-            st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
-            st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 22. SHARP: Feature Importance
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
+            # st.image("Strata_boxplot_1.png")
+            # st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
+            # st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 23. Unary values in focus
             def scorer(dataset, columns=None):
