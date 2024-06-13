@@ -3393,11 +3393,7 @@ elif Sport == 'Tennis':
             st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # Calculate the average of the absolute values for each column
-            average_abs_values = df_values_2.abs().mean()
-            st.dataframe(average_abs_values, width=900)
-
-
+            
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
@@ -3405,13 +3401,29 @@ elif Sport == 'Tennis':
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+
+
+            
+            
+            # 28. Create a new DataFrame
+            average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
+            variance_values = df_values_2.var() # Calculate the variance for each column
+            diff_max_min_values = df_values_2.max() - df_values_2.min() # Calculate the difference between the maximum and minimum values for each column
+            df_stats = pd.DataFrame({
+            'Average Abs': average_abs_values,
+            'Variance': variance_values,
+            'Max-Min Difference': diff_max_min_values})
+            st.dataframe(df_stats, width=900)
+            st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+
             
             # 28. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
             st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
-            st.markdown(f"**Figure 28**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
+            st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
