@@ -3393,6 +3393,12 @@ elif Sport == 'Tennis':
             st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
+            # Calculate the average of the absolute values for each column
+            average_abs_values = df_values_2.abs().mean()
+            st.dataframe(average_abs_values, width=900)
+
+
+
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
             st.set_option('deprecation.showPyplotGlobalUse', False)
