@@ -669,7 +669,7 @@ if Sport == 'Basketball':
             'Variance': variance_values,
             'Max-Min Difference (Amplitude)': diff_max_min_values})
             st.dataframe(df_stats, width=900)
-            st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil.")
+            st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
@@ -1790,7 +1790,7 @@ elif Sport == 'Football':
             'Variance': variance_values,
             'Max-Min Difference (Amplitude)': diff_max_min_values})
             st.dataframe(df_stats, width=900)
-            st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil.")
+            st.markdown(f"**Figure 28**: Table aggregating the average values, the variance and the amplitude from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
 
