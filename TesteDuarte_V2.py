@@ -2445,6 +2445,8 @@ elif Sport == 'Tennis':
         X = df.drop(columns=["serve_standing_player", "return_standing_player", "under_pressure_standing_player", "final_rating"]).set_index("player")
         y = df.final_rating / df.final_rating.max()
         
+        y = 
+        
         # Define the dictionary mapping short names to full names
         variable_names = {
         'perc_1st_serve': " 1st Serve (%)", 
@@ -2975,9 +2977,10 @@ elif Sport == 'Tennis':
         df['aces_per_match'] = df['aces'] / df['matches']
         df['df_per_match'] = df['df'] / df['matches']
         df.drop(['matches', 'aces', 'df'], axis=1, inplace=True) # Since we already have more relevant information with the new created variables.
-        min_ranking = df['rank'].min()
-        max_ranking = df['rank'].max()
-        df['rank'] = (df['rank'] - min_ranking) / (max_ranking - min_ranking)
+        # min_ranking = df['rank'].min()
+        # max_ranking = df['rank'].max()
+        # df['rank'] = (df['rank'] - min_ranking) / (max_ranking - min_ranking)
+        df['rank'] = 101 - df['rank']
         X = df.drop(columns=["pos", "rank"]).set_index("player")
         y = df["rank"]
 
