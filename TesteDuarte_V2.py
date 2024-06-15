@@ -2445,7 +2445,6 @@ elif Sport == 'Tennis':
         X = df.drop(columns=["serve_standing_player", "return_standing_player", "under_pressure_standing_player", "final_rating"]).set_index("player")
         y = df.final_rating / df.final_rating.max()
         
-        y = 
         
         # Define the dictionary mapping short names to full names
         variable_names = {
