@@ -2738,9 +2738,9 @@ elif Sport == 'Tennis':
 
         #else:
         with tabs[3]:
-            # # 17. Scatter Plot
-            # Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            # 17. Scatter Plot
+            Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
             # st.set_option('deprecation.showPyplotGlobalUse', False)
             # shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
             # st.pyplot()
