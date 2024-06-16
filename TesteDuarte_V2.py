@@ -2759,8 +2759,8 @@ elif Sport == 'Tennis':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 19. SHAP Waterfall Plot
-            # X_indexes = X.index.tolist()
-            # Tennis_male_index_player = X_indexes.index(Player)
+            X_indexes = X.index.tolist()
+            Tennis_male_index_player = X_indexes.index(Player)
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
             # st.set_option('deprecation.showPyplotGlobalUse', False)
             # shap.plots.waterfall(shap_values[Tennis_male_index_player])
