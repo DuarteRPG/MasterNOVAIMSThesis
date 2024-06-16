@@ -2738,61 +2738,61 @@ elif Sport == 'Tennis':
 
         #else:
         with tabs[3]:
-            # 17. Scatter Plot
-            Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
-            st.pyplot()
-            st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
-            st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 17. Scatter Plot
+            # Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
+            # st.pyplot()
+            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
+            # st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 18. SHAP Partial Dependence Plot
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.partial_dependence_plot(
-                Tennis_male_feature, lr.predict, X, ice=False,
-                model_expected_value=True, feature_expected_value=True) 
-            st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 18. SHAP Partial Dependence Plot
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.partial_dependence_plot(
+            #     Tennis_male_feature, lr.predict, X, ice=False,
+            #     model_expected_value=True, feature_expected_value=True) 
+            # st.pyplot()
+            # st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 19. SHAP Waterfall Plot
-            X_indexes = X.index.tolist()
-            Tennis_male_index_player = X_indexes.index(Player)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.waterfall(shap_values[Tennis_male_index_player])
-            st.pyplot()
-            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_male_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 19. SHAP Waterfall Plot
+            # X_indexes = X.index.tolist()
+            # Tennis_male_index_player = X_indexes.index(Player)
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.waterfall(shap_values[Tennis_male_index_player])
+            # st.pyplot()
+            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_male_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
         with tabs[4]:
-            # Concepts to take into account
-            st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
+            # # Concepts to take into account
+            # st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
 
-            # 20. SHARP: Rank vs Score
-            import os
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
-            st.image("Rank_vs_Score_(5) ATP.png")
-            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 20. SHARP: Rank vs Score
+            # import os
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
+            # st.image("Rank_vs_Score_(5) ATP.png")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 21. SHARP: Top and Bottom 3 Individuals
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
-            st.image("Top_bottom_feature_importance_5.png")
-            st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 21. SHARP: Top and Bottom 3 Individuals
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
+            # st.image("Top_bottom_feature_importance_5.png")
+            # st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 22. SHARP: Feature Importance
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
-            st.image("Strata_boxplot_5.png")
-            st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
-            st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 22. SHARP: Feature Importance
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
+            # st.image("Strata_boxplot_5.png")
+            # st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
+            # st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 23. Unary values in focus
             def scorer(dataset, columns=None):
