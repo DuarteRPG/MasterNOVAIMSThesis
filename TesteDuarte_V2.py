@@ -2662,52 +2662,52 @@ elif Sport == 'Tennis':
             # st.markdown(f"**Figure 12**: 'Radar' chart gives us a closer look at the differences, per feature, **on {selected_player}**. Similar to the previous visualization, but with values normalized.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # # 13. Radar (per player) - RECOMMENDED STATE
-            # # Specify the name of the player
-            # selected_player = Player
-            # # Filter "differences" DataFrame.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]    
-            # categories = list(player_cfs_normalized.index) # Setting categories as a list of all "differences" column.
-            # values = player_cfs_normalized.values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown(f"<h4 style='text-align: center;'>RECOMMENDED STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 13**: ''Radar' chart gives us a visual understanding of the desired importance, per feature, **on {selected_player}**. Provides insights on which features should **in the future contributing the most** to achieve the desired model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # 13. Radar (per player) - RECOMMENDED STATE
+            # Specify the name of the player
+            selected_player = Player
+            # Filter "differences" DataFrame.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]    
+            categories = list(player_cfs_normalized.index) # Setting categories as a list of all "differences" column.
+            values = player_cfs_normalized.values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown(f"<h4 style='text-align: center;'>RECOMMENDED STATE: Values for {selected_player}</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 13**: ''Radar' chart gives us a visual understanding of the desired importance, per feature, **on {selected_player}**. Provides insights on which features should **in the future contributing the most** to achieve the desired model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
-            # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # # Specify the name of the player.
-            # selected_player = Player
-            # # Filter the differences "DataFrame" for the selected player.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]
-            # player_values_cfs = player_cfs_normalized.values.tolist()
-            # player_values_cfs += player_values_cfs[:1]
-            # player_X_normalized = X_normalized.loc[selected_player]
-            # player_values_X = player_X_normalized.values.tolist()
-            # player_values_X += player_values_X[:1]
-            # # Changing angles and categories.
-            # categories = list(player_cfs_normalized.index)
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            # angles += angles[:1]
-            # # Plot for 'cfs', that represent the desired values.
-            # plt.figure(figsize=(8, 8))
-            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # # Plot for 'X', that represent the initial values.
-            # plt.polar(angles, player_values_X, label='initial', color='green')
-            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            # plt.xticks(angles[:-1], categories)
-            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            # plt.legend()
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
+            # Specify the name of the player.
+            selected_player = Player
+            # Filter the differences "DataFrame" for the selected player.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]
+            player_values_cfs = player_cfs_normalized.values.tolist()
+            player_values_cfs += player_values_cfs[:1]
+            player_X_normalized = X_normalized.loc[selected_player]
+            player_values_X = player_X_normalized.values.tolist()
+            player_values_X += player_values_X[:1]
+            # Changing angles and categories.
+            categories = list(player_cfs_normalized.index)
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            angles += angles[:1]
+            # Plot for 'cfs', that represent the desired values.
+            plt.figure(figsize=(8, 8))
+            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # Plot for 'X', that represent the initial values.
+            plt.polar(angles, player_values_X, label='initial', color='green')
+            plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            plt.xticks(angles[:-1], categories)
+            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            plt.legend()
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
                 
         #else:
@@ -2740,33 +2740,33 @@ elif Sport == 'Tennis':
         with tabs[3]:
             # 17. Scatter Plot
             Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
-            st.pyplot()
-            st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
-            st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
+            # st.pyplot()
+            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
+            # st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 18. SHAP Partial Dependence Plot
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.partial_dependence_plot(
-                Tennis_male_feature, lr.predict, X, ice=False,
-                model_expected_value=True, feature_expected_value=True) 
-            st.pyplot()
-            st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 18. SHAP Partial Dependence Plot
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.partial_dependence_plot(
+            #     Tennis_male_feature, lr.predict, X, ice=False,
+            #     model_expected_value=True, feature_expected_value=True) 
+            # st.pyplot()
+            # st.markdown(f"**Figure 18**: Model's dependence on the feature {Tennis_male_feature_full_name}, now in the new original feature space (X). It explains **how SHAP values of {Tennis_male_feature_full_name} vary across a dataset** and how changes in the {Tennis_male_feature_full_name} values impact model's predictions. \n - **X-axis** represents SHAP values for the {Tennis_male_feature_full_name} feature; \n - **Y-axis** represents the variation per player; \n - **Gray horizontal line** represents the final expected value for the model; \n - **Gray vertical line** represents {Tennis_male_feature_full_name} average value; \n - **The blue line with positive slope** represents the model average value when we define **{Tennis_male_feature_full_name}** as a certain value;")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
             Tennis_male_index_player = X_indexes.index(Player)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.waterfall(shap_values[Tennis_male_index_player])
-            st.pyplot()
-            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_male_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
+            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            # shap.plots.waterfall(shap_values[Tennis_male_index_player])
+            # st.pyplot()
+            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_male_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
