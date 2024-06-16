@@ -659,7 +659,7 @@ if Sport == 'Basketball':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
@@ -1205,7 +1205,7 @@ if Sport == 'Basketball':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
@@ -1780,7 +1780,7 @@ elif Sport == 'Football':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
@@ -2392,7 +2392,7 @@ elif Sport == 'Football':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
@@ -2936,7 +2936,7 @@ elif Sport == 'Tennis':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
@@ -3478,7 +3478,7 @@ elif Sport == 'Tennis':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             
-            # 28. Create a new DataFrame
+            # 28. Create a Statistics DataFrame
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Statistics Comparison</h1>", unsafe_allow_html=True)
             average_abs_values = df_values_2.abs().mean() # Calculate the average of the absolute values for each column
             variance_values = df_values_2.var() # Calculate the variance for each column
