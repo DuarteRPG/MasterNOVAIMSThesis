@@ -566,7 +566,7 @@ if Sport == 'Basketball':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Team}. Similarly to SHAP Waterfall, it attempts to explain {Team} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Team}. Similarly to SHAP Waterfall, it attempts to explain {Team} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
@@ -1112,7 +1112,7 @@ if Sport == 'Basketball':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
@@ -1687,7 +1687,7 @@ elif Sport == 'Football':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Team}. Similarly to SHAP Waterfall, it attempts to explain {Team} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Team}. Similarly to SHAP Waterfall, it attempts to explain {Team} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
@@ -2299,7 +2299,7 @@ elif Sport == 'Football':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
@@ -2843,7 +2843,7 @@ elif Sport == 'Tennis':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
@@ -3383,7 +3383,7 @@ elif Sport == 'Tennis':
 
             _waterfall(rank_dict, max_display=15)
             st.pyplot()
-            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} predictions. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.markdown(f"**Figure 24**: Waterfall plot for the selected {Player}. Similarly to SHAP Waterfall, it attempts to explain {Player} ranking. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 25. SHARP: Pairwise Comparison
