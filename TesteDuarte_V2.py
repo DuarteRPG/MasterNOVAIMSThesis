@@ -648,7 +648,7 @@ if Sport == 'Basketball':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
@@ -1194,7 +1194,7 @@ if Sport == 'Basketball':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
@@ -1769,7 +1769,7 @@ elif Sport == 'Football':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
@@ -2381,7 +2381,7 @@ elif Sport == 'Football':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
@@ -2925,7 +2925,7 @@ elif Sport == 'Tennis':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
@@ -3465,7 +3465,7 @@ elif Sport == 'Tennis':
             # Apply the highlight_top3 function to the DataFrame and displaying it
             df_styled_2 = df_values_2.style.apply(highlight_top1)
             st.dataframe(df_styled_2, width=900)
-            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value.")
+            st.markdown(f"**Figure 26**: Table aggregating the main insights from DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **In green** is represent the highest positive value. \n - **In red** is represent the lowest negative value. \n - Note that highest DiCE values does not necessary mean worse features. DiCE can impact either the best features or the worst features. But overall, the lowest the player ranking, the higher amount tend to be the player average DiCE values.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             
