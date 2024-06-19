@@ -2774,12 +2774,12 @@ elif Sport == 'Tennis':
             # # Concepts to take into account
             # st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
 
-            # # 20. SHARP: Rank vs Score
-            # import os
-            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
-            # st.image("Rank_vs_Score_(5) ATP.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # 20. SHARP: Rank vs Score
+            import os
+            st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
+            st.image("Rank_vs_Score_(5) ATP.png")
+            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
@@ -3314,12 +3314,12 @@ elif Sport == 'Tennis':
             # # Concepts to take into account
             # st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
 
-            # 20. SHARP: Rank vs Score        
-            import os
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
-            st.image("Rank_vs_Score_(6) WTA.png")
-            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # # 20. SHARP: Rank vs Score        
+            # import os
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
+            # st.image("Rank_vs_Score_(6) WTA.png")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
