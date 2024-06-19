@@ -2781,18 +2781,18 @@ elif Sport == 'Tennis':
             st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
-            # 21. SHARP: Top and Bottom 3 Individuals
-            st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
-            st.image("Top_bottom_feature_importance_5.png")
-            st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
-
-            # # 22. SHARP: Feature Importance
-            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
-            # st.image("Strata_boxplot_5.png")
-            # st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
-            # st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
+            # # 21. SHARP: Top and Bottom 3 Individuals
+            # st.markdown(f"<h4 style='text-align: center;'>SHARP: Top and Bottom 3 Individuals</h1>", unsafe_allow_html=True)
+            # st.image("Top_bottom_feature_importance_5.png")
+            # st.markdown("**Figure 21**: Top 3 and Bottom 3 instances with their respective aggregate feature importance, providing insights on which are the most and the **least relevant features for their ranking**. For example:  \n - Features with a **high positive values among the top 3**, means that it was a **key feature** for these instances to achieve this **high/good ranking**; \n - Features with a **considerable negative values among the bottom 3**, means that it was a **key feature** for these instances to achieve this **low/bad ranking;** ")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+
+            # 22. SHARP: Feature Importance
+            st.markdown(f"<h4 style='text-align: center;'>SHARP: Feature Importance</h1>", unsafe_allow_html=True)
+            st.image("Strata_boxplot_5.png")
+            st.markdown("**Figure 22**: Visualization on how feature importance varies **across strata (different decil categories)**. \n - There are 5 decil categories, represented at the bottom of the graph. \n - All the features are legended at the top of the graph. \n - At the left side of the graph, we have indication of the importance magnitude. \n - Each feature importance is distributed thorugh a boxplot, indicating us Q1, Q2 (median) and Q3. The higher the position of the boxplot, **the higher the relevancy of that specific feature in that decil**. \n - **The longer the boxplot**, the **more different importances that feature acquire** in the dataset.")
+            st.markdown("We highly recommend you to open the figure (at the top right corner of the figure) and zoom it, so that you can have a better understanding of the main insights.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 23. Unary values in focus
             def scorer(dataset, columns=None):
