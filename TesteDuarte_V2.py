@@ -500,7 +500,7 @@ if Sport == 'Basketball':
             # import os
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             # st.image("Rank_vs_Score_(1) Basket Team.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Team's Score, the better tends to be the its rank**.")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
@@ -1049,7 +1049,7 @@ if Sport == 'Basketball':
             # import os
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             # st.image("Rank_vs_Score_(2) Basket Player.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
@@ -1618,7 +1618,7 @@ elif Sport == 'Football':
             # import os
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             # st.image("Rank_vs_Score_(3) Football_Teams.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Team's Score, the better tends to be the its rank**.")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
@@ -2224,7 +2224,7 @@ elif Sport == 'Football':
             # import os
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             # st.image("Rank_vs_Score_(4) Football Player.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
@@ -2778,7 +2778,7 @@ elif Sport == 'Tennis':
             import os
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             st.image("Rank_vs_Score_(5) ATP.png")
-            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
@@ -3318,7 +3318,7 @@ elif Sport == 'Tennis':
             # import os
             # st.markdown(f"<h4 style='text-align: center;'>SHARP: Rank vs Score</h1>", unsafe_allow_html=True)
             # st.image("Rank_vs_Score_(6) WTA.png")
-            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**, meaning that: \n - **the higher the Player's Score, the better tends to be the its rank**.")
+            # st.markdown("**Figure 20**: Relationship between Score and Rank. Score function, which provides a certain weight to each variable in the dataset, was defined by us, acccording to our knowledge of the sport. We tend to see an **inverse relationship between Score and Rank**.")
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 21. SHARP: Top and Bottom 3 Individuals
