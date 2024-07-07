@@ -2574,13 +2574,13 @@ elif Sport == 'Tennis':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Player_differences.index, Player_differences.values)
-            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            # plt.xlabel('Columns')
-            # plt.ylabel('Values')
-            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.pyplot(fig) # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            plt.xlabel('Columns')
+            plt.ylabel('Values')
+            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
+            st.pyplot(fig) # Displaying plot in Streamlit
+            st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 9. KDE
             differences_array = differences[Tennis_male_feature].values
@@ -2719,12 +2719,12 @@ elif Sport == 'Tennis':
             lr = LinearRegression(fit_intercept=False).fit(X, y)
             explainer = shap.Explainer(lr, X)
             shap_values = explainer(X)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.bar(shap_values, max_display=15)
-            # st.pyplot()  
-            # st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.bar(shap_values, max_display=15)
+            st.pyplot()  
+            st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
@@ -2740,13 +2740,13 @@ elif Sport == 'Tennis':
         with tabs[3]:
             # 17. Scatter Plot
             Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Tennis_male_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_male_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -2771,8 +2771,8 @@ elif Sport == 'Tennis':
 
         #else:
         with tabs[4]:
-            # # Concepts to take into account
-            # st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
+            # Concepts to take into account
+            st.info("SHARP: (SHapley for Rankings and Preferences), a framework that attemps to explain the contribution of features to different decils of an output in 'a ranking format' and can be base either on ShaPley or Unary values (we used the last one). According to recent studies, ShaRP claims that the weght of each feature does not correspond to its ShaPley value contribution (analyzed on tabs 3 and 4). Researches appoint that it depends on feature distribution (varying according to the decil in focus) and to local interactions between scoring features. ShaRP, derived from Quantitative Input Influence framework, can contribute to explain score-based and ranking type models.")
 
             # 20. SHARP: Rank vs Score
             import os
