@@ -26,8 +26,8 @@ import sklearn
 import streamlit as st
 import shap
 import warnings
-warnings.filterwarnings("ignore")
-warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
+#warnings.filterwarnings("ignore")
+#warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # From other libraries
