@@ -462,13 +462,13 @@ if Sport == 'Basketball':
         with tabs[3]:
             # 17. Scatter Plot
             basketball_team_index_feature = Basketball_team_list.index(Basketball_team_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, basketball_team_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_team_feature_full_name} feature, which means **'how much must {Basketball_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_team_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Basketball_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_team_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, basketball_team_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_team_feature_full_name} feature, which means **'how much must {Basketball_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_team_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Basketball_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_team_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Basketball_team_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -998,26 +998,26 @@ if Sport == 'Basketball':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.beeswarm(shap_values, max_display=15)
-            # st.pyplot()
-            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.beeswarm(shap_values, max_display=15)
+            st.pyplot()
+            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
         with tabs[3]:
             # 17. Scatter Plot
             basketball_player_index_feature = Basketball_player_list.index(Basketball_player_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_player_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, basketball_player_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_player_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_player_feature_full_name} feature, which means **'how much must {Basketball_player_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_player_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Basketball_player_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_player_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Basketball_player_feature_full_name}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, basketball_player_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Basketball_player_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Basketball_player_feature_full_name} feature, which means **'how much must {Basketball_player_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Basketball_player_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Basketball_player_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Basketball_player_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Basketball_player_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -1032,12 +1032,12 @@ if Sport == 'Basketball':
             # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
             basketball_player_index_player = X_indexes.index(Player)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.waterfall(shap_values[basketball_player_index_player])
-            # st.pyplot()
-            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Basketball_player_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.waterfall(shap_values[basketball_player_index_player])
+            st.pyplot()
+            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Basketball_player_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
@@ -1567,13 +1567,13 @@ elif Sport == 'Football':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.beeswarm(shap_values, max_display=15)
-            # st.pyplot()
-            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.beeswarm(shap_values, max_display=15)
+            st.pyplot()
+            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
@@ -1581,12 +1581,12 @@ elif Sport == 'Football':
             # 17. Scatter Plot
             Football_team_index_feature = Football_team_list.index(Football_team_feature)
             st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Football_team_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, Football_team_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Football_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Football_team_feature_full_name} feature, which means **'how much must {Football_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Football_team_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Football_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Football_team_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, Football_team_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Football_team_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Football_team_feature_full_name} feature, which means **'how much must {Football_team_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Football_team_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Football_team_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Football_team_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Football_team_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -1601,12 +1601,12 @@ elif Sport == 'Football':
             # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
             Football_team_index_player = X_indexes.index(Team)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Team}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.waterfall(shap_values[Football_team_index_player])
-            # st.pyplot()
-            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Team}, instead of, as in the previous two graphs, focusing on feature {Football_team_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Team}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.waterfall(shap_values[Football_team_index_player])
+            st.pyplot()
+            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Team}, instead of, as in the previous two graphs, focusing on feature {Football_team_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
@@ -2173,26 +2173,26 @@ elif Sport == 'Football':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.beeswarm(shap_values, max_display=15)
-            # st.pyplot()
-            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.beeswarm(shap_values, max_display=15)
+            st.pyplot()
+            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
         with tabs[3]:
             # 17. Scatter Plot
             Football_player_index_feature = Football_player_list.index(Football_player_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Football_player_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, Football_player_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Football_player_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Football_player_feature_full_name} feature, which means **'how much must {Football_player_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Football_player_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Football_player_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Football_player_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Football_player_feature_full_name}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, Football_player_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Football_player_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Football_player_feature_full_name} feature, which means **'how much must {Football_player_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Football_player_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Football_player_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Football_player_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Football_player_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -2207,12 +2207,12 @@ elif Sport == 'Football':
             # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
             Football_player_index_player = X_indexes.index(Player)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.waterfall(shap_values[Football_player_index_player])
-            # st.pyplot()
-            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Football_player_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.waterfall(shap_values[Football_player_index_player])
+            st.pyplot()
+            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Football_player_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
@@ -2727,13 +2727,13 @@ elif Sport == 'Tennis':
             #st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.beeswarm(shap_values, max_display=15)
-            # st.pyplot()
-            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.beeswarm(shap_values, max_display=15)
+            st.pyplot()
+            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
@@ -3267,26 +3267,26 @@ elif Sport == 'Tennis':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.beeswarm(shap_values, max_display=15)
-            # st.pyplot()
-            # st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
-            # st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.beeswarm(shap_values, max_display=15)
+            st.pyplot()
+            st.markdown("**Figure 16**: Beeswarm Plot summarizes what are the **most relevant features** impact model output. Each instance is represented at the graph by a single point. The plot below sorts features by their SHAP value magnitudes. \n - In the X-axis, **positive SHAP values represent a positive impact** from the feature to the model output (positive SHAP values means that that feature contribute positively to its model outcome) (Features whose variance contribute positively to the player overall improvement have positive absolute values); \n - In the X-axis, **negative SHAP values represent a negative impact** from the feature to the model output (negative SHAP values means that that feature contributely negatively to its model outcome)(Features whose variance contribute negatively to the player overall improvement have negative absolute values); \n - **The red color code** for a specific instance, means that it a value above the dataset average for that specific feature; \n - **The blue color code** for a specific instance, means that it a value bellow the dataset average for that specific feature.")
+            st.markdown("For example, for features with mostly blue dot at the right side of the graph, it means that the lower the feature value, the higher it tends to be the outcome.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
         with tabs[3]:
             # 17. Scatter Plot
             Tennis_female_index_feature = Tennis_female_list.index(Tennis_female_feature)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_female_feature_full_name}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.scatter(shap_values[:, Tennis_female_index_feature])
-            # st.pyplot()
-            # st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_female_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_female_feature_full_name} feature, which means **'how much must {Tennis_female_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_female_feature_full_name}**.")
-            # st.markdown(f"This means that, for positive SHAP values, **{Tennis_female_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_female_feature_full_name} must impact negatively** the model output.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_female_feature_full_name}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.scatter(shap_values[:, Tennis_female_index_feature])
+            st.pyplot()
+            st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_female_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_female_feature_full_name} feature, which means **'how much must {Tennis_female_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_female_feature_full_name}**.")
+            st.markdown(f"This means that, for positive SHAP values, **{Tennis_female_feature_full_name} must impact positively** the model output, while for negative SHAP values, **{Tennis_female_feature_full_name} must impact negatively** the model output.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 18. SHAP Partial Dependence Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Partial Dependence Plot for feature {Tennis_female_feature_full_name}</h1>", unsafe_allow_html=True)
@@ -3301,12 +3301,12 @@ elif Sport == 'Tennis':
             # 19. SHAP Waterfall Plot
             X_indexes = X.index.tolist()
             Tennis_female_index_player = X_indexes.index(Player)
-            # st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
-            # shap.plots.waterfall(shap_values[Tennis_female_index_player])
-            # st.pyplot()
-            # st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_female_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
+            shap.plots.waterfall(shap_values[Tennis_female_index_player])
+            st.pyplot()
+            st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_female_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
 
         #else:
