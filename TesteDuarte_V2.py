@@ -1199,7 +1199,7 @@ if Sport == 'Basketball':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -1222,7 +1222,7 @@ if Sport == 'Basketball':
             
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
@@ -1740,7 +1740,7 @@ elif Sport == 'Football':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
@@ -1774,7 +1774,7 @@ elif Sport == 'Football':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -1796,7 +1796,7 @@ elif Sport == 'Football':
 
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
@@ -2352,7 +2352,7 @@ elif Sport == 'Football':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
@@ -2386,7 +2386,7 @@ elif Sport == 'Football':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -2407,7 +2407,7 @@ elif Sport == 'Football':
             
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
@@ -2896,7 +2896,7 @@ elif Sport == 'Tennis':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
@@ -2930,7 +2930,7 @@ elif Sport == 'Tennis':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -2951,7 +2951,7 @@ elif Sport == 'Tennis':
             
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
@@ -3436,7 +3436,7 @@ elif Sport == 'Tennis':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
@@ -3472,7 +3472,7 @@ elif Sport == 'Tennis':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -3495,7 +3495,7 @@ elif Sport == 'Tennis':
             
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Player} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
