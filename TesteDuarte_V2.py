@@ -28,7 +28,7 @@ import shap
 import warnings
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
-# st.set_option('deprecation.showPyplotGlobalUse', False)
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # From other libraries
 from dash import dcc, html
@@ -554,7 +554,7 @@ if Sport == 'Basketball':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
@@ -571,7 +571,7 @@ if Sport == 'Basketball':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
@@ -619,7 +619,7 @@ if Sport == 'Basketball':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
@@ -653,7 +653,7 @@ if Sport == 'Basketball':
 
             # 27. DiCE vs SHAP vs SHARP: Comparing Methods Graphically
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods Graphically</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             st.line_chart(df_values_2, width=800, height=600)
             st.markdown(f"**Figure 27**: Graphic representation of the previous table.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
@@ -674,7 +674,7 @@ if Sport == 'Basketball':
 
             # 29. DiCE vs SHAP vs SHARP: Correlation Matrix
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Correlation Matrix</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             correlation_matrix = df_values_2.corr()
             st.write(correlation_matrix)    
             st.markdown(f"**Figure 29**: Correlation matrix between DiCE, SHAP and SHARP applied to {Team} and according to the selected decil. \n - **Positive values** represent a direct relationship, meaning that features increase and decrese together; \n - **Negative values** represent an indirect relationship, meaning when one of the methods increases, the other decreases; \n - **The highest the absolute value**, the most relevant the feature is.")
@@ -1100,7 +1100,7 @@ if Sport == 'Basketball':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
@@ -1117,7 +1117,7 @@ if Sport == 'Basketball':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
@@ -1165,7 +1165,7 @@ if Sport == 'Basketball':
             # 26. DiCE vs SHAP vs SHARP: Comparing Methods
             # Convert to DataFrame and displaying the table.
             st.markdown(f"<h4 style='text-align: center;'>DiCE vs SHAP vs SHARP: Comparing Methods</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             df_values_2 = pd.DataFrame(all_values)
             df_values_2.set_index('Feature', inplace=True)
             df_values_2.columns = ["DiCE Counterfactuals", "SHAP Values", "SHARP Values"] # Renaming columns. Replacing Rank Dict Values for SHARP Values.
