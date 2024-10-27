@@ -265,20 +265,20 @@ if Sport == 'Basketball':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -772,12 +772,12 @@ if Sport == 'Basketball':
             Player_differences = differences.loc[Player]
 
             # # 2. Heatmap: Insights from SUGGESTED CHANGES
-            # plt.figure(figsize=(10, 10))
-            # sns.heatmap(differences, cmap='coolwarm')
-            # st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.figure(figsize=(10, 10))
+            sns.heatmap(differences, cmap='coolwarm')
+            st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 3. Histograms: Insights from SUGGESTED CHANGES
             # Transforming differences into an array.
@@ -814,20 +814,20 @@ if Sport == 'Basketball':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -1341,12 +1341,12 @@ elif Sport == 'Football':
             Team_differences = differences.loc[Team]
 
             # # 2. Heatmap: Insights from SUGGESTED CHANGES
-            # plt.figure(figsize=(10, 10))
-            # sns.heatmap(differences, cmap='coolwarm')
-            # st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Teams (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.figure(figsize=(10, 10))
+            sns.heatmap(differences, cmap='coolwarm')
+            st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Teams (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 3. Histograms: Insights from SUGGESTED CHANGES
             # # Transforming differences into an array.
@@ -1383,20 +1383,20 @@ elif Sport == 'Football':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -1947,12 +1947,12 @@ elif Sport == 'Football':
             Player_differences = differences.loc[Player]
 
             # # 2. Heatmap: Insights from SUGGESTED CHANGES
-            # plt.figure(figsize=(10, 10))
-            # sns.heatmap(differences, cmap='coolwarm')
-            # st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.figure(figsize=(10, 10))
+            sns.heatmap(differences, cmap='coolwarm')
+            st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 3. Histograms: Insights from SUGGESTED CHANGES
             # # Transforming differences into an array.
@@ -1989,20 +1989,20 @@ elif Sport == 'Football':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -2501,12 +2501,12 @@ elif Sport == 'Tennis':
             Player_differences = differences.loc[Player]
 
             # # 2. Heatmap: Insights from SUGGESTED CHANGES
-            # plt.figure(figsize=(10, 10))
-            # sns.heatmap(differences, cmap='coolwarm')
-            # st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.figure(figsize=(10, 10))
+            sns.heatmap(differences, cmap='coolwarm')
+            st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 3. Histograms: Insights from SUGGESTED CHANGES
             # Transforming differences into an array.
@@ -2543,20 +2543,20 @@ elif Sport == 'Tennis':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
@@ -3041,12 +3041,12 @@ elif Sport == 'Tennis':
             Player_differences = differences.loc[Player]
 
             # # 2. Heatmap: Insights from SUGGESTED CHANGES
-            # plt.figure(figsize=(10, 10))
-            # sns.heatmap(differences, cmap='coolwarm')
-            # st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.figure(figsize=(10, 10))
+            sns.heatmap(differences, cmap='coolwarm')
+            st.markdown("<h4 style='text-align: center;'>Heatmap: Insights from SUGGESTED CHANGES</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 2**: Results from DICE. Representation of all the differences obtained in our dataset, per instance. Visual representation of how the features would need to be altered in the counterfactual scenarios compared to the original data to achieve the desired outcomes predicted by the model. Players (in Y-axis) vs Features (in X-axis), with variations in absolute values: \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 3. Histograms: Insights from SUGGESTED CHANGES
             # # Transforming differences into an array.
@@ -3083,20 +3083,20 @@ elif Sport == 'Tennis':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 6. Radar Chart: Average SUGGESTED CHANGES per feature
-            # categories = list(differences.columns) # Setting categories as a list of all "differences" column.
-            # values = differences.mean().values.tolist() # List of mean differences per feature.
-            # values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
-            # angles += angles[:1] # Connect the first and the last point, closing creating a loop.
-            # # Plot features. 
-            # plt.figure(figsize=(8, 8)) # Setting figure size.
-            # plt.polar(angles, values) # Using polar coordinates.
-            # plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
-            # plt.xticks(angles[:-1], categories) # Set the categories as labels.
-            # st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            categories = list(differences.columns) # Setting categories as a list of all "differences" column.
+            values = differences.mean().values.tolist() # List of mean differences per feature.
+            values += values[:1]   # Connect the first and the last point of the radar, closing and creating a loop.
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))] # Angles for each category.
+            angles += angles[:1] # Connect the first and the last point, closing creating a loop.
+            # Plot features. 
+            plt.figure(figsize=(8, 8)) # Setting figure size.
+            plt.polar(angles, values) # Using polar coordinates.
+            plt.fill(angles, values, alpha=0.25) # Fill the inside area with a semi-transparent color.
+            plt.xticks(angles[:-1], categories) # Set the categories as labels.
+            st.markdown("<h4 style='text-align: center;'>Radar Chart: Average SUGGESTED CHANGES per feature</h1>", unsafe_allow_html=True)
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown("**Figure 6**: Results from DICE. Another method to represent the differences obtained. **The axis defines each difference magnitude per feature.**")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 7. SWARM: Insights from SUGGESTED CHANGES
             # sns.swarmplot(data=differences, palette='coolwarm')
