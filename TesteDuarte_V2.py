@@ -2720,11 +2720,11 @@ elif Sport == 'Tennis':
             explainer = shap.Explainer(lr, X)
             shap_values = explainer(X)
             st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             shap.plots.bar(shap_values, max_display=15)
-            st.pyplot()  
-            st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            #st.pyplot()  
+            #st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
+            #st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
@@ -2741,7 +2741,7 @@ elif Sport == 'Tennis':
             # 17. Scatter Plot
             Tennis_male_index_feature = Tennis_male_list.index(Tennis_male_feature)
             st.markdown(f"<h4 style='text-align: center;'>SHAP Scatter Plot for feature {Tennis_male_feature_full_name}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             shap.plots.scatter(shap_values[:, Tennis_male_index_feature])
             st.pyplot()
             st.markdown(f"**Figure 17**: Scatter plot on feature **{Tennis_male_feature_full_name}**, which shows its effect on model predictions. Each point represents an instance from the dataset. \n - **X-axis** represents the feature input value;  \n - **y-axis** represents the SHAP values for {Tennis_male_feature_full_name} feature, which means **'how much must {Tennis_male_feature_full_name} change the model output value'**; \n - **The gray area** represents, through an histogram, dataset distribution for **{Tennis_male_feature_full_name}**.")
