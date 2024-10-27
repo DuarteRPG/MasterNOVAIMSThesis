@@ -404,32 +404,32 @@ if Sport == 'Basketball':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # # Specify the name of the player.
-            # selected_player = Team
-            # # Filter the differences "DataFrame" for the selected player.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]
-            # player_values_cfs = player_cfs_normalized.values.tolist()
-            # player_values_cfs += player_values_cfs[:1]
-            # player_X_normalized = X_normalized.loc[selected_player]
-            # player_values_X = player_X_normalized.values.tolist()
-            # player_values_X += player_values_X[:1]
-            # # Changing angles and categories.
-            # categories = list(player_cfs_normalized.index)
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            # angles += angles[:1]
-            # # Plot for 'cfs', that represent the desired values.
-            # plt.figure(figsize=(8, 8))
-            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # # Plot for 'X', that represent the initial values.
-            # plt.polar(angles, player_values_X, label='initial', color='green')
-            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            # plt.xticks(angles[:-1], categories)
-            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            # plt.legend()
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)            
+            # Specify the name of the player.
+            selected_player = Team
+            # Filter the differences "DataFrame" for the selected player.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]
+            player_values_cfs = player_cfs_normalized.values.tolist()
+            player_values_cfs += player_values_cfs[:1]
+            player_X_normalized = X_normalized.loc[selected_player]
+            player_values_X = player_X_normalized.values.tolist()
+            player_values_X += player_values_X[:1]
+            # Changing angles and categories.
+            categories = list(player_cfs_normalized.index)
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            angles += angles[:1]
+            # Plot for 'cfs', that represent the desired values.
+            plt.figure(figsize=(8, 8))
+            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # Plot for 'X', that represent the initial values.
+            plt.polar(angles, player_values_X, label='initial', color='green')
+            plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            plt.xticks(angles[:-1], categories)
+            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            plt.legend()
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)            
 
 
         #else:
@@ -845,13 +845,13 @@ if Sport == 'Basketball':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Player_differences.index, Player_differences.values)
-            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            # plt.xlabel('Columns')
-            # plt.ylabel('Values')
-            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.pyplot(fig) # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            plt.xlabel('Columns')
+            plt.ylabel('Values')
+            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
+            st.pyplot(fig) # Displaying plot in Streamlit
+            st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 9. KDE
             differences_array = differences[Basketball_player_feature].values
@@ -953,32 +953,32 @@ if Sport == 'Basketball':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)            
             
             # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # # Specify the name of the player.
-            # selected_player = Player
-            # # Filter the differences "DataFrame" for the selected player.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]
-            # player_values_cfs = player_cfs_normalized.values.tolist()
-            # player_values_cfs += player_values_cfs[:1]
-            # player_X_normalized = X_normalized.loc[selected_player]
-            # player_values_X = player_X_normalized.values.tolist()
-            # player_values_X += player_values_X[:1]
-            # # Changing angles and categories.
-            # categories = list(player_cfs_normalized.index)
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            # angles += angles[:1]
-            # # Plot for 'cfs', that represent the desired values.
-            # plt.figure(figsize=(8, 8))
-            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # # Plot for 'X', that represent the initial values.
-            # plt.polar(angles, player_values_X, label='initial', color='green')
-            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            # plt.xticks(angles[:-1], categories)
-            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            # plt.legend()
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # Specify the name of the player.
+            selected_player = Player
+            # Filter the differences "DataFrame" for the selected player.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]
+            player_values_cfs = player_cfs_normalized.values.tolist()
+            player_values_cfs += player_values_cfs[:1]
+            player_X_normalized = X_normalized.loc[selected_player]
+            player_values_X = player_X_normalized.values.tolist()
+            player_values_X += player_values_X[:1]
+            # Changing angles and categories.
+            categories = list(player_cfs_normalized.index)
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            angles += angles[:1]
+            # Plot for 'cfs', that represent the desired values.
+            plt.figure(figsize=(8, 8))
+            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # Plot for 'X', that represent the initial values.
+            plt.polar(angles, player_values_X, label='initial', color='green')
+            plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            plt.xticks(angles[:-1], categories)
+            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            plt.legend()
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
                 
         #else:
@@ -1414,13 +1414,13 @@ elif Sport == 'Football':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Team_differences.index, Team_differences.values)
-            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            # plt.xlabel('Columns')
-            # plt.ylabel('Values')
-            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Team}</h1>", unsafe_allow_html=True)
-            # st.pyplot(fig) # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 8**: Results from DICE for **{Team}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            plt.xlabel('Columns')
+            plt.ylabel('Values')
+            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Team}</h1>", unsafe_allow_html=True)
+            st.pyplot(fig) # Displaying plot in Streamlit
+            st.markdown(f"**Figure 8**: Results from DICE for **{Team}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 9. KDE
             differences_array = differences[Football_team_feature].values
@@ -2020,13 +2020,13 @@ elif Sport == 'Football':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Player_differences.index, Player_differences.values)
-            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            # plt.xlabel('Columns')
-            # plt.ylabel('Values')
-            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.pyplot(fig) # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            plt.xlabel('Columns')
+            plt.ylabel('Values')
+            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
+            st.pyplot(fig) # Displaying plot in Streamlit
+            st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 9. KDE
             differences_array = differences[Football_player_feature].values
@@ -2128,32 +2128,32 @@ elif Sport == 'Football':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
                         
             # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # # Specify the name of the player.
-            # selected_player = Player
-            # # Filter the differences "DataFrame" for the selected player.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]
-            # player_values_cfs = player_cfs_normalized.values.tolist()
-            # player_values_cfs += player_values_cfs[:1]
-            # player_X_normalized = X_normalized.loc[selected_player]
-            # player_values_X = player_X_normalized.values.tolist()
-            # player_values_X += player_values_X[:1]
-            # # Changing angles and categories.
-            # categories = list(player_cfs_normalized.index)
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            # angles += angles[:1]
-            # # Plot for 'cfs', that represent the desired values.
-            # plt.figure(figsize=(8, 8))
-            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # # Plot for 'X', that represent the initial values.
-            # plt.polar(angles, player_values_X, label='initial', color='green')
-            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            # plt.xticks(angles[:-1], categories)
-            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            # plt.legend()
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # Specify the name of the player.
+            selected_player = Player
+            # Filter the differences "DataFrame" for the selected player.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]
+            player_values_cfs = player_cfs_normalized.values.tolist()
+            player_values_cfs += player_values_cfs[:1]
+            player_X_normalized = X_normalized.loc[selected_player]
+            player_values_X = player_X_normalized.values.tolist()
+            player_values_X += player_values_X[:1]
+            # Changing angles and categories.
+            categories = list(player_cfs_normalized.index)
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            angles += angles[:1]
+            # Plot for 'cfs', that represent the desired values.
+            plt.figure(figsize=(8, 8))
+            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # Plot for 'X', that represent the initial values.
+            plt.polar(angles, player_values_X, label='initial', color='green')
+            plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            plt.xticks(angles[:-1], categories)
+            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            plt.legend()
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
                 
         #else:
@@ -3114,13 +3114,13 @@ elif Sport == 'Tennis':
             # 8. Bar Plot
             fig, ax = plt.subplots()
             ax.bar(Player_differences.index, Player_differences.values)
-            # plt.xticks(rotation=90)  # Adjusting the angle of my axis.
-            # plt.xlabel('Columns')
-            # plt.ylabel('Values')
-            # st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
-            # st.pyplot(fig) # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            plt.xticks(rotation=90)  # Adjusting the angle of my axis.
+            plt.xlabel('Columns')
+            plt.ylabel('Values')
+            st.markdown(f"<h4 style='text-align: center;'>Bar Plot for {Player}</h1>", unsafe_allow_html=True)
+            st.pyplot(fig) # Displaying plot in Streamlit
+            st.markdown(f"**Figure 8**: Results from DICE for **{Player}**. As described in the previous tab, it provides 'what-if' explanations for the model output, by stating **which features would need to be altered in the counterfactual scenarios** compared to the original data to achieve the desired outcomes predicted by the model.  \n - **Positive values** indicate an increase recommendation for that feature;  \n - **Negative values** indicate a decrease recommendation for that feature.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
                     
             # 9. KDE
             differences_array = differences[Tennis_female_feature].values
@@ -3222,32 +3222,32 @@ elif Sport == 'Tennis':
             # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
             
             # # 14. Radar (per player) - INITIAL and RECOMMENDED STATE overlapped
-            # # Specify the name of the player.
-            # selected_player = Player
-            # # Filter the differences "DataFrame" for the selected player.
-            # player_cfs_normalized = cfs_normalized.loc[selected_player]
-            # player_values_cfs = player_cfs_normalized.values.tolist()
-            # player_values_cfs += player_values_cfs[:1]
-            # player_X_normalized = X_normalized.loc[selected_player]
-            # player_values_X = player_X_normalized.values.tolist()
-            # player_values_X += player_values_X[:1]
-            # # Changing angles and categories.
-            # categories = list(player_cfs_normalized.index)
-            # angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
-            # angles += angles[:1]
-            # # Plot for 'cfs', that represent the desired values.
-            # plt.figure(figsize=(8, 8))
-            # plt.polar(angles, player_values_cfs, label='recommended', color='blue')
-            # plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
-            # # Plot for 'X', that represent the initial values.
-            # plt.polar(angles, player_values_X, label='initial', color='green')
-            # plt.fill(angles, player_values_X, alpha=0.25, color='green')
-            # plt.xticks(angles[:-1], categories)
-            # st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
-            # plt.legend()
-            # st.pyplot() # Displaying plot in Streamlit
-            # st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
-            # st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            # Specify the name of the player.
+            selected_player = Player
+            # Filter the differences "DataFrame" for the selected player.
+            player_cfs_normalized = cfs_normalized.loc[selected_player]
+            player_values_cfs = player_cfs_normalized.values.tolist()
+            player_values_cfs += player_values_cfs[:1]
+            player_X_normalized = X_normalized.loc[selected_player]
+            player_values_X = player_X_normalized.values.tolist()
+            player_values_X += player_values_X[:1]
+            # Changing angles and categories.
+            categories = list(player_cfs_normalized.index)
+            angles = [n / float(len(categories)) * 2 * pi for n in range(len(categories))]
+            angles += angles[:1]
+            # Plot for 'cfs', that represent the desired values.
+            plt.figure(figsize=(8, 8))
+            plt.polar(angles, player_values_cfs, label='recommended', color='blue')
+            plt.fill(angles, player_values_cfs, alpha=0.25, color='blue')
+            # Plot for 'X', that represent the initial values.
+            plt.polar(angles, player_values_X, label='initial', color='green')
+            plt.fill(angles, player_values_X, alpha=0.25, color='green')
+            plt.xticks(angles[:-1], categories)
+            st.markdown(f"<h4 style='text-align: center;'>INITIAL STATE and RECOMMENDED STATE: for {selected_player} - NORMALIZED</h1>", unsafe_allow_html=True)
+            plt.legend()
+            st.pyplot() # Displaying plot in Streamlit
+            st.markdown(f"**Figure 14**: To obtain clear insights, we overlapped previous **INITIAL** and **RECOMMENDADED STATES** visualizations. Recapping: \n - **Blue line** represent **DESIRED** feature values (Counterfactuals); \n - **Green line** represent **INITIAL** feature values.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
                 
         #else:
