@@ -444,7 +444,7 @@ if Sport == 'Basketball':
             st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
             #st.set_option('deprecation.showPyplotGlobalUse', False)
             shap.plots.bar(shap_values, max_display=15)
-            st.pyplot()  
+            #st.pyplot()  
             st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
