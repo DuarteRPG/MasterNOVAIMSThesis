@@ -441,12 +441,12 @@ if Sport == 'Basketball':
             lr = LinearRegression(fit_intercept=False).fit(X, y)
             explainer = shap.Explainer(lr, X)
             shap_values = explainer(X)
-            #st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
             #st.set_option('deprecation.showPyplotGlobalUse', False)
-            #shap.plots.bar(shap_values, max_display=15)
-            #st.pyplot()  
-            #st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
-            #st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            shap.plots.bar(shap_values, max_display=15)
+            st.pyplot()  
+            st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
+            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
