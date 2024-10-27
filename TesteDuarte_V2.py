@@ -2762,7 +2762,7 @@ elif Sport == 'Tennis':
             X_indexes = X.index.tolist()
             Tennis_male_index_player = X_indexes.index(Player)
             st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Player}</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             shap.plots.waterfall(shap_values[Tennis_male_index_player])
             st.pyplot()
             st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Player}, instead of, as in the previous two graphs, focusing on feature {Tennis_male_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Player}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Player}**.")
