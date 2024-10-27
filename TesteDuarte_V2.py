@@ -1692,7 +1692,7 @@ elif Sport == 'Football':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
@@ -2304,7 +2304,7 @@ elif Sport == 'Football':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
@@ -2848,7 +2848,7 @@ elif Sport == 'Tennis':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
@@ -3388,7 +3388,7 @@ elif Sport == 'Tennis':
 
             # 25. SHARP: Pairwise Comparison
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Pairwise Comparison</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             
             X_sharp = X
             X_sharp_np = X_sharp.values
