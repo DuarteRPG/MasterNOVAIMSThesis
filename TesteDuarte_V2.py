@@ -441,12 +441,12 @@ if Sport == 'Basketball':
             lr = LinearRegression(fit_intercept=False).fit(X, y)
             explainer = shap.Explainer(lr, X)
             shap_values = explainer(X)
-            st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
+            #st.markdown(f"<h4 style='text-align: center;'>SHAP Bar Plot</h1>", unsafe_allow_html=True)
             #st.set_option('deprecation.showPyplotGlobalUse', False)
-            shap.plots.bar(shap_values, max_display=15)
+            #shap.plots.bar(shap_values, max_display=15)
             #st.pyplot()  
-            st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
-            st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+            #st.markdown("**Figure 15**: Overview of the impact of **each feature on the model output/predictions**. It represents the **mean absolute value of each feature** for the overall dataset. \n - **The higher the SHAP Value mean**, the **higher its feature importance**.")
+            #st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # # 16. SHAP Beeswarm Plot
             # st.markdown(f"<h4 style='text-align: center;'>SHAP Beeswarm Plot</h1>", unsafe_allow_html=True)
@@ -484,7 +484,7 @@ if Sport == 'Basketball':
             X_indexes = X.index.tolist()
             basketball_team_index_player = X_indexes.index(Team)
             st.markdown(f"<h4 style='text-align: center;'>SHAP Waterfall Plot for {Team}</h1>", unsafe_allow_html=True)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
             shap.plots.waterfall(shap_values[basketball_team_index_player], max_display=15)
             st.pyplot()
             st.markdown(f"**Figure 19**: Waterfall plot attempts to explain the predictions for {Team}, instead of, as in the previous two graphs, focusing on feature {Basketball_team_feature_full_name}. In the X-axis, we have information of the entire model expected output value. The color code, along with its respective magnitude indication, inform if: \n - The **red features** are pushing the **prediction higher**; \n - The **blue features** are pushing the **prediction lower**; \n - The **gray values** before the feature name, indicate each feature value for **{Team}**; \n - The **gray value** on top of the graph, indicates the model prediction for **{Team}**.")
@@ -1675,7 +1675,7 @@ elif Sport == 'Football':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
@@ -2287,7 +2287,7 @@ elif Sport == 'Football':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
@@ -2831,7 +2831,7 @@ elif Sport == 'Tennis':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
@@ -3371,7 +3371,7 @@ elif Sport == 'Tennis':
 
             # 24. SHARP: Waterfall
             st.markdown(f"<h4 style='text-align: center;'>SHARP: Waterfall Plot</h1>", unsafe_allow_html=True)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            #st.set_option('deprecation.showPyplotGlobalUse', False)
             rank_dict = {
             "upper_bounds": None,
             "lower_bounds": None,
