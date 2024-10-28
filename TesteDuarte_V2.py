@@ -2663,7 +2663,7 @@ elif Sport == 'Tennis':
             st.write("<div style='height: 150px;'></div>", unsafe_allow_html=True)
 
             # 13. Radar (per player) - RECOMMENDED STATE
-            Specify the name of the player
+            #Specify the name of the player
             selected_player = Player
             # Filter "differences" DataFrame.
             player_cfs_normalized = cfs_normalized.loc[selected_player]    
